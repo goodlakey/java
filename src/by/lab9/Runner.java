@@ -1,4 +1,4 @@
-package by.gsu.lab9;
+package by.lab9;
 
 import by.gsu.pms.Forecast;
 import com.google.gson.Gson;
