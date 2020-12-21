@@ -15,7 +15,7 @@ public class InsertQuaryDriver {
         try (PreparedStatement preparedStatement = connection.prepareStatement(FAMILYMEMBER_QUERY)) {
             preparedStatement.setInt(1, (Integer) queryParameters.get(0));
             preparedStatement.setInt(2, (Integer) queryParameters.get(1));
-            preparedStatement.setInt(3,  (Integer) queryParameters.get(2));
+            preparedStatement.setString(3,  (String) queryParameters.get(2));
 
             preparedStatement.execute();
             System.out.println(">>> Insert query executed...");

@@ -21,7 +21,7 @@ CREATE TABLE IF NOT EXISTS familymember (
 	familymember_id INT NOT NULL AUTO_INCREMENT,
     incomes_id INT NOT NULL,
     expenses_id INT NULL,
-    familymember_name int NOT NULL,
+    familymember_name varchar(45)  NOT NULL,
     PRIMARY KEY(familymember_id),
     FOREIGN KEY (incomes_id) REFERENCES incomes(incomes_id),
     FOREIGN KEY (expenses_id) REFERENCES expenses(expenses_id)

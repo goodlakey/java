@@ -7,7 +7,7 @@ public class ConnectionDriver {
 
         public static final String URL = "jdbc:mysql://localhost/mydb?serverTimezone=Europe/Minsk&useSSL=false";
         public static final String USERNAME = "root";
-        public static final String PASSWORD = "root";
+        public static final String PASSWORD = "1234";
 
         private ConnectionDriver() { }
 

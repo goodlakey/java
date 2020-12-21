@@ -1,5 +1,3 @@
-package by;
-
 import by.gsu.pms.*;
 import org.apache.ibatis.jdbc.ScriptRunner;
 
@@ -16,11 +14,11 @@ public class Runner {
         Mapper mapper = new Mapper();
         ArrayList<Object> queryParameters = new ArrayList<>();
         Connection connection = ConnectionDriver.openConnection();
-//        ScriptRunner scriptRunner = new ScriptRunner(connection);
-//        Reader readerCreate = new BufferedReader(new FileReader("./resources/create_script.sql"));
-//        scriptRunner.runScript(readerCreate);
-//        Reader readerInsert = new BufferedReader(new FileReader("./resources/insert_script.sql"));
-//        scriptRunner.runScript(readerInsert);
+        //     ScriptRunner scriptRunner = new ScriptRunner(connection);
+        //  Reader readerCreate = new BufferedReader(new FileReader("./project/resources/create_script.sql"));
+        // scriptRunner.runScript(readerCreate);
+        // Reader readerInsert = new BufferedReader(new FileReader("./project/resources/insert_script.sql"));
+        //   scriptRunner.runScript(readerInsert);
 
         if (connection != null) {
             while (run) {
@@ -34,7 +32,7 @@ public class Runner {
                         for (FamilyRecord familyRecord : familyRecords) {
                             Income income = SelectQuaryDriver.selectIncomeById(familyRecord.getIncomes_id(), connection);
                             Expenses expenses = SelectQuaryDriver.selectExpensesById(familyRecord.getExpences_id(), connection);
-                            FmDTO fmDTO = mapper.mapFmDTO(familyRecord, expenses,income );
+                            FmDTO fmDTO = mapper.mapFmDTO(familyRecord, expenses, income);
                         }
                         reportToHTML(result);
                         break;
@@ -50,7 +48,7 @@ public class Runner {
                         break;
                     case 4:
                         System.out.print("Enter incomes id: ");
-                        String incomes_id = scanner.next();
+                        int incomes_id = scanner.nextInt();
                         queryParameters.add(incomes_id);
                         System.out.print("Enter expenses id: ");
                         int expenses_id = scanner.nextInt();
@@ -103,6 +101,7 @@ public class Runner {
         System.out.println("6. INSERT incomes ");
         System.out.println("7. EXIT program");
     }
+
     public static void reportToHTML(String result) {
         File f = new File("./resources/index.html");
         try (BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(f))) {
