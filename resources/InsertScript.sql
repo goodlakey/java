@@ -1,14 +1,14 @@
-insert into mydb.satellites(satellite_name,satellite_radius,distance) values
-				('луна',1737,384467),
-				('фобос',11,9400),
-				('ио',1821,421600),
-				('европа',1560,670900),
-				('ганимед',2634,930500),
-				('калисто',2410,1882000),
-				('мимас',198,185000),
-				('тефия',531,234500);
+insert into mydb_10.satellites(satellite_name,satellite_radius,planet_id,distance) values
+				('луна',1737,1,384467),
+				('фобос',11,2,9400),
+				('ио',1821,3,421600),
+				('европа',1560,4,670900),
+				('ганимед',2634,5,930500),
+				('калисто',2410,6,1882000),
+				('мимас',198,7,185000),
+				('тефия',531,8,234500);
 
-insert into mydb.planets(planet_name,planet_radius,temp_core,atmosphere,life,satellite_id)values
+insert into mydb_10.planets(planet_name,planet_radius,temp_core,atmosphere,life,satellite_count)values
                 ('меркурий',2439,2400,'есть','нет',null),
                 ('Венера',6051,5000,'есть','нет',null),
                 ('Земля',6371,5960,'есть','yes',1),
@@ -22,7 +22,7 @@ insert into mydb.planets(planet_name,planet_radius,temp_core,atmosphere,life,sat
 
 
 
-insert into mydb.galaxy(galaxy_name,planets_id)values
+insert into mydb_10.galaxy(galaxy_name,planets_id)values
                 ('Млечный путь',1),
                 ('Млечный путь',2),
                 ('Млечный путь',3),

@@ -17,16 +17,16 @@ public class Runner {
 
         Connection connection = new ConnectionDriver().getConnect();
         ScriptRunner scriptRunner = new ScriptRunner(connection);
-//        try {
-//            Reader readerCreate = new BufferedReader(new FileReader("./resources/CreateScript.sql"));
-//            scriptRunner.runScript(readerCreate);
-//
-//            Reader readerInsert = new BufferedReader(new FileReader("./resources/InsertScript.sql"));
-//            scriptRunner.runScript(readerInsert);
-//            System.out.println("Tables created and inserted");
-//        }catch (Exception ex ){
-//            System.out.println("Tables alredy exist");
-//        }
+    //    try {
+   //         Reader readerCreate = new BufferedReader(new FileReader("./resources/CreateScript.sql"));
+      //      scriptRunner.runScript(readerCreate);
+
+      //     Reader readerInsert = new BufferedReader(new FileReader("./resources/InsertScript.sql"));
+       //     scriptRunner.runScript(readerInsert);
+       //     System.out.println("Tables created and inserted");
+     //   }catch (Exception ex ){
+    //        System.out.println("Tables alredy exist");
+    //    }
         if (connection != null) {
             showMenu();
             System.out.println("\n Please choose: ");
@@ -35,7 +35,7 @@ public class Runner {
                 case 1:
                     String result = "";
                     String exercise1Select = "SELECT galaxy.galaxy_name, planets.planet_name, planets.life, satellites.satellite_name\n" +
-                            "FROM satellites INNER JOIN (planets INNER JOIN galaxy ON planets.id = galaxy.planets_id) ON satellites.id = planets.satellite_id\n" +
+                            "FROM satellites INNER JOIN (planets INNER JOIN galaxy ON planets.id = galaxy.planets_id) ON satellites.id = planets.satellite_count\n" +
                             "WHERE (((galaxy.galaxy_name)=\"Млечный путь\") AND ((planets.life)=\"yes\"));";
                     result += SelectQueryDriver.executeSelectQuery(1, exercise1Select, connection);
                     String exercise2Select = "SELECT planet_name, COUNT(planet_name)  as NumberOfSatellites\n" +
@@ -46,7 +46,7 @@ public class Runner {
                     result += SelectQueryDriver.executeSelectQuery(2, exercise2Select, connection);
                     String exercise3Select =
                             "SELECT galaxy.galaxy_name, Max(planets.temp_core) AS Maxtemp_core\n" +
-                                    "FROM satellites INNER JOIN (planets INNER JOIN galaxy ON planets.id = galaxy.planets_id) ON satellites.id = planets.satellite_id\n" +
+                                    "FROM satellites INNER JOIN (planets INNER JOIN galaxy ON planets.id = galaxy.planets_id) ON satellites.id = planets.satellite_count\n" +
                                     "GROUP BY galaxy.galaxy_name;";
                     result += SelectQueryDriver.executeSelectQuery(3, exercise3Select, connection);
                     reportToHTML(result);

@@ -4,9 +4,9 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 
 public class ConnectionDriver {
-    private static final String URL = "jdbc:mysql://localhost:3306/mydb?serverTimezone=Europe/Minsk&useSSL=false";
+    private static final String URL = "jdbc:mysql://localhost:3306/mydb_10?serverTimezone=Europe/Minsk&useSSL=false";
     private static final String USERNAME = "root";
-    private static final String PASSWORD = "root";
+    private static final String PASSWORD = "1234";
 
     public ConnectionDriver() {
     }
