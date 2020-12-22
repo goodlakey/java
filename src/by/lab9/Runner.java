@@ -19,7 +19,7 @@ public class Runner {
         Gson gson = new Gson();
         Forecast forecast = null;
         try {
-            System.out.println("Pleas wait...");
+            System.out.println("Please wait...");
             URL url = new URL(URL);
             HttpURLConnection httpURLConnection = (HttpURLConnection) url.openConnection();
             httpURLConnection.addRequestProperty("User-Agent", "Chrome");
