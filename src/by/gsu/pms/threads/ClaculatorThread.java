@@ -19,11 +19,15 @@ public class ClaculatorThread extends Thread {
     public void run() {
         String threadName = Thread.currentThread().getName();
         System.out.println("Thread " + threadName + " starting ");
-        for (int i = this.minValue; i <= this.maxValue * 2; i++) {
+
+
+        for (int i = this.minValue; i <= this.maxValue; i++) {
             if (i % 2 == 0)
                 this.result *= i;
 
         }
+        System.out.println("Число в потоке " + result);
+
     }
 
 }

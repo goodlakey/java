@@ -14,7 +14,7 @@ public class ThreadGenerator {
         if (maxValue > countOfThreads && maxValue % countOfThreads == 0) {
             ClaculatorThread[] arrayThreads = new ClaculatorThread[countOfThreads];
 
-            int threadCapacity = maxValue / countOfThreads;
+            int threadCapacity = maxValue * 2 / countOfThreads;
             for (int i = 0; i < countOfThreads; i++) {
                 int start = i * threadCapacity + 1;
                 int end = i * threadCapacity + threadCapacity;
